@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Welcome!
+title: Robin Scott | UI developer | UI designer
 description: This is my site. Welcome.
 keywords: github pages, Jekyll, foundation 5
 ---
