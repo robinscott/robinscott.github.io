@@ -30,7 +30,7 @@ category_dir: /
 #baseurl: /path/to/blog
 baseurl:
 
-# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+# The URL of your actual domain.
 url: http://robinscott.github.io
 
 # URL for images (TBC)
