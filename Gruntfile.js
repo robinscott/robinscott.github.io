@@ -1,14 +1,19 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+	// Metadata
+    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+    '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+    '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+    '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.business %>;',
     sass: {
       options: {
         includePaths: ['bower_components/foundation/scss']
       },
       dist: {
         options: {
-          outputStyle: 'compressed'
+          outputStyle: 'compressed',
+          banner: '<%= banner %>'
         },
         files: {
           'css/style.css': 'scss/style.scss'
