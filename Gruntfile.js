@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
     '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.business %>;',
     
+    // Task configuration
     sass: {
       options: {
         includePaths: ['bower_components/foundation/scss']
