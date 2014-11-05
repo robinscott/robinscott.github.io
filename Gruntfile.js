@@ -12,7 +12,8 @@ module.exports = function(grunt) {
     sass: {
       options: {
         loadPath: ['bower_components/foundation/scss'],
-        banner: '<%= banner %>'
+        banner: '<%= banner %>',
+        quiet: true
       },
       dist: {
         options: {
