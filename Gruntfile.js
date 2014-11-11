@@ -8,25 +8,32 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.business %>; */\n',
 
-    // Directories
-    dir: {
-      js: {
-        src: {
-          foundation: 'bower_components/foundation/js/foundation.js',
-          plugins: 'plugins'
-        }
+    // Paths
+    js: {
+      src: {
+        foundation: 'bower_components/foundation/js/foundation.js',
+        js_dev: 'js/dev/*.js',
+        js_concat: 'js/concat/script.js',
       },
-      sass: {
-        src: {
-          foundation: 'bower_components/foundation/scss'
-        }
+      dest: {
+        js_concat: 'js/concat/script.js',
+        js_output: 'js/output/script.min.js'
+      }
+    },
+    css: {
+      src: {
+        foundation: 'bower_components/foundation/scss',
+        sass: 'scss/style.scss'
+      },
+      dest: {
+        css: 'css/style.css'
       }
     },
     
     // Task configuration
     sass: {
       options: {
-        loadPath: ['<%= dir.sass.src.foundation %>'],
+        loadPath: ['<%= css.src.foundation %>'],
         banner: '<%= banner %>',
         quiet: true
       },
@@ -35,7 +42,7 @@ module.exports = function(grunt) {
           style: 'compressed', //nested, compact, compressed, expanded
         },
         files: {
-          'css/style.css': 'scss/style.scss'
+          '<%= css.dest.css %>': '<%= css.src.sass %>'
         }        
       }
     },
@@ -45,9 +52,20 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['<%= dir.js.src.foundation %>', '<%= dir.js.src.plugins %>/*.js'],
-        dest: 'js/script.js',
+        src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
+        dest: '<%= js.dest.js_concat %>',
       },
+    },
+
+    uglify: {
+      options: {
+        mangle: false
+      },
+      output: {
+        files: {
+          'js/output/script.min.js': ['js/concat/script.js']
+        }
+      }
     },
 
     watch: {
@@ -58,12 +76,14 @@ module.exports = function(grunt) {
         tasks: ['sass']
       }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['concat','build','watch']);
+  grunt.registerTask('default', ['concat','uglify','build','watch']);
 }
