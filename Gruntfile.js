@@ -10,15 +10,23 @@ module.exports = function(grunt) {
 
     // Directories
     dir: {
-      src: {
-        foundation: 'bower_components/foundation/js/foundation.js'
+      js: {
+        src: {
+          foundation: 'bower_components/foundation/js/foundation.js',
+          plugins: 'plugins'
+        }
+      },
+      sass: {
+        src: {
+          foundation: 'bower_components/foundation/scss'
+        }
       }
     },
     
     // Task configuration
     sass: {
       options: {
-        loadPath: ['bower_components/foundation/scss'],
+        loadPath: ['<%= dir.sass.src.foundation %>'],
         banner: '<%= banner %>',
         quiet: true
       },
@@ -37,7 +45,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['<%= dir.src.foundation %>', 'plugins/*.js'],
+        src: ['<%= dir.js.src.foundation %>', '<%= dir.js.src.plugins %>/*.js'],
         dest: 'js/script.js',
       },
     },
