@@ -7,6 +7,13 @@ module.exports = function(grunt) {
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.business %>; */\n',
+
+    // Directories
+    dir: {
+      src: {
+        foundation: 'bower_components/foundation/js/foundation.js'
+      }
+    },
     
     // Task configuration
     sass: {
@@ -25,6 +32,16 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['<%= dir.src.foundation %>', 'plugins/*.js'],
+        dest: 'js/script.js',
+      },
+    },
+
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
@@ -34,9 +51,11 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('default', ['concat','build','watch']);
 }
