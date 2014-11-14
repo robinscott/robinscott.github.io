@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       },
       output: {
         files: {
-          'js/output/script.min.js': ['js/concat/script.js']
+          '<%= js.dest.js_output %>': ['<%= js.src.js_concat %>']
         }
       }
     },
