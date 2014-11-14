@@ -12,12 +12,10 @@ module.exports = function(grunt) {
     js: {
       src: {
         foundation: 'bower_components/foundation/js/foundation.js',
-        js_dev: 'js/dev/*.js',
-        js_concat: 'js/concat/script.js',
+        js_dev: 'js/dev/*.js'
       },
       dest: {
-        js_concat: 'js/concat/script.js',
-        js_output: 'js/output/script.min.js'
+        js_output: 'js/script.min.js'
       }
     },
     css: {
@@ -47,23 +45,13 @@ module.exports = function(grunt) {
       }
     },
 
-    concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
-        src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
-        dest: '<%= js.dest.js_concat %>',
-      },
-    },
-
     uglify: {
       options: {
         mangle: false
       },
       output: {
         files: {
-          '<%= js.dest.js_output %>': ['<%= js.src.js_concat %>']
+          '<%= js.dest.js_output %>': ['<%= js.src.foundation %>', '<%= js.src.js_dev %>']
         }
       }
     },
@@ -79,11 +67,10 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['concat','uglify','build','watch']);
+  grunt.registerTask('default', ['uglify','build','watch']);
 }
