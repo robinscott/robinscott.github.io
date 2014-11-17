@@ -22,9 +22,11 @@
 }());
 
 // Place any jQuery/helper plugins in here.
-var $offCanvasWrap = $(".off-canvas-wrap");
+$(document).ready(function() {
+    var $offCanvasWrap = $(".off-canvas-wrap");
     $(window).resize(function() {
         if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-right")) {
             $(".exit-off-canvas").trigger("click");
     }
+    });
 });
