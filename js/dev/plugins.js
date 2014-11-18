@@ -26,17 +26,19 @@
     }
 
     app.resizeClosesNavigation = function() {
-        $(document).ready(function() {
-            var $offCanvasWrap = $(".off-canvas-wrap");
-            $(window).on('resize', Foundation.utils.throttle(function(e){
-                if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-left")) {
-                    $(".exit-off-canvas").trigger("click");
-                }
-            }, 300));
-        });
+        var $offCanvasWrap = $(".off-canvas-wrap");
+        $(window).on('resize', Foundation.utils.throttle(function(e){
+            if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-left")) {
+                $(".exit-off-canvas").trigger("click");
+            }
+        }, 300));
     }
 
     return app;
 
 }(jQuery));
 
+$(document).ready(function() {
+    app.handleConsoleReporting();
+    app.resizeClosesNavigation();
+});
