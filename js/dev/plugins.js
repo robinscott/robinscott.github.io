@@ -24,9 +24,10 @@
 // Place any jQuery/helper plugins in here.
 $(document).ready(function() {
     var $offCanvasWrap = $(".off-canvas-wrap");
+    console.log('ok');
     $(window).resize(function() {
         if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-right")) {
             $(".exit-off-canvas").trigger("click");
-    }
+        }
     });
 });
