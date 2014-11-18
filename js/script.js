@@ -5781,6 +5781,7 @@ var SiteScripts = (function($) {
 
 $(function() {
     SiteScripts.handleConsoleReporting();
+  	SiteScripts.resizeClosesNavigation();
 });
 ;// Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
