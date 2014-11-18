@@ -15,7 +15,8 @@ module.exports = function(grunt) {
         js_dev: 'js/dev/*.js'
       },
       dest: {
-        js_output: 'js/script.min.js'
+        js_concat: 'js/script.js',
+        js_min: 'js/script.min.js'
       }
     },
     css: {
@@ -45,13 +46,23 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
+        dest: '<%= js.dest.js_concat %>',
+      },
+    },
+
     uglify: {
       options: {
         mangle: false
       },
       output: {
         files: {
-          '<%= js.dest.js_output %>': ['<%= js.src.foundation %>', '<%= js.src.js_dev %>']
+          '<%= js.dest.js_min %>': ['<%= js.dest.js_concat %>']
         }
       }
     },
@@ -69,8 +80,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['uglify','build','watch']);
+  grunt.registerTask('default', ['concat','uglify','build','watch']);
 }

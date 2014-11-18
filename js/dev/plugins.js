@@ -39,6 +39,6 @@
 }(jQuery));
 
 $(document).ready(function() {
-    app.handleConsoleReporting();
-    app.resizeClosesNavigation();
+    handleConsoleReporting();
+    resizeClosesNavigation();
 });
