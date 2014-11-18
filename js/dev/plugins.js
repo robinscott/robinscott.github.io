@@ -1,8 +1,9 @@
-// Avoid `console` errors in browsers that lack a console.
+
 var SiteScripts = (function($) {
     
     var app = {};
 
+    // Avoid `console` errors in browsers that lack a console.s
     app.handleConsoleReporting = function() {
         var method;
         var noop = function () {};
@@ -23,8 +24,9 @@ var SiteScripts = (function($) {
                 console[method] = noop;
             }
         }
-    }
+    };
 
+    // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
         var $offCanvasWrap = $(".off-canvas-wrap");
         $(window).on('resize', Foundation.utils.throttle(function(e){
@@ -32,13 +34,15 @@ var SiteScripts = (function($) {
                 $(".exit-off-canvas").trigger("click");
             }
         }, 300));
-    }
+    };
 
     return app;
 
 }(jQuery));
 
+
+SiteScripts.handleConsoleReporting();
+
 $(function() {
-    SiteScripts.handleConsoleReporting();
   	SiteScripts.resizeClosesNavigation();
 });
