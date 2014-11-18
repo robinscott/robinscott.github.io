@@ -1,5 +1,5 @@
 // Avoid `console` errors in browsers that lack a console.
-(function($) {
+var SiteScripts = (function($) {
     
     var app = {};
 
@@ -38,7 +38,6 @@
 
 }(jQuery));
 
-$(document).ready(function() {
-    handleConsoleReporting();
-    resizeClosesNavigation();
+$(function() {
+    SiteScripts.handleConsoleReporting();
 });
