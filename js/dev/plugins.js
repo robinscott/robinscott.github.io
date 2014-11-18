@@ -40,4 +40,5 @@ var SiteScripts = (function($) {
 
 $(function() {
     SiteScripts.handleConsoleReporting();
+  	SiteScripts.resizeClosesNavigation();
 });
