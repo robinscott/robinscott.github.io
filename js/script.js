@@ -5740,7 +5740,7 @@
   };
 }(jQuery, window, window.document));
 ;// Avoid `console` errors in browsers that lack a console.
-(function($) {
+var SiteScripts = (function($) {
     
     var app = {};
 
@@ -5779,9 +5779,9 @@
 
 }(jQuery));
 
-$(document).ready(function() {
-    handleConsoleReporting();
-    resizeClosesNavigation();
-});;// Foundation JavaScript
+$(function() {
+    SiteScripts.handleConsoleReporting();
+});
+;// Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
