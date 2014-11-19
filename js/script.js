@@ -5770,8 +5770,12 @@ var SiteScripts = (function($) {
     // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
         var $offCanvasWrap = $(".off-canvas-wrap");
-        $(window).on('resize', Foundation.utils.throttle(function() {
-            this.outerWidth < 640 && $offCanvasWrap.hasClass("move-left") ? $(".exit-off-canvas").trigger("click") : $offCanvasWrap.addClass("move-left");
+        $(window).on('resize', Foundation.utils.throttle(function(e){
+            if(this.outerWidth < 640 && $offCanvasWrap.hasClass("move-left")) {
+                $(".exit-off-canvas").trigger("click");
+            } else if(this.outerWidth > 640 && !$offCanvasWrap.hasClass("move-left")) {
+                $offCanvasWrap.addClass("move-left")
+            }
         }, 300));
     };
 
