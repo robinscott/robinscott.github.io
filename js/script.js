@@ -5767,7 +5767,7 @@ var SiteScripts = (function($) {
         }
     };
 
-    // Close the Foundation off canvas navigation when the window resizes
+    /* Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
         var $offCanvasWrap = $(".off-canvas-wrap");
         $(window).on('resize', Foundation.utils.throttle(function(e){
@@ -5776,7 +5776,8 @@ var SiteScripts = (function($) {
             }
         }, 300));
     };
-
+    */
+    
     return app;
 
 }(jQuery));
