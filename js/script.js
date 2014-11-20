@@ -5772,6 +5772,7 @@ var SiteScripts = (function($) {
         if (window.matchMedia(Foundation.media_queries.medium).matches) {
           console.log('medium or above');
         } else {
+          console.log('small');
           $(".exit-off-canvas").trigger("click");
         };
 
