@@ -5769,9 +5769,9 @@ var SiteScripts = (function($) {
 
     // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
-        // if (window.matchMedia(Foundation.media_queries.small).matches) {
-        //   $('.off-canvas-wrap').foundation('offcanvas', 'hide', 'move-right');
-        // };
+        if (window.matchMedia(Foundation.media_queries.small).matches) {
+          $('.off-canvas-wrap').foundation('offcanvas', 'hide', 'move-right');
+        };
 
         // var $offCanvasWrap = $(".off-canvas-wrap");
         // $(window).on('resize', Foundation.utils.throttle(function(e){
@@ -5797,9 +5797,6 @@ $(document).foundation({
   offcanvas : {
     // Sets method in which offcanvas opens.
     // [ move | overlap_single | overlap ]
-    open_method: 'overlap', 
-    // Should the menu close when a menu link is clicked?
-    // [ true | false ]
-    close_on_click : false
+    open_method: 'overlap'
   }
 });
