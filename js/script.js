@@ -5773,7 +5773,7 @@ var SiteScripts = (function($) {
           console.log('medium or above');
         } else {
           console.log('small');
-          //$(".exit-off-canvas").trigger("click");
+          $(".exit-off-canvas").removeClass("offcanvas-overlap-right");
         };
 
         // var $offCanvasWrap = $(".off-canvas-wrap");
