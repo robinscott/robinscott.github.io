@@ -5772,7 +5772,7 @@ var SiteScripts = (function($) {
         if (window.matchMedia(Foundation.media_queries.medium).matches) {
           console.log('medium or above');
         } else {
-          $('.off-canvas-wrap').foundation('offcanvas', 'hide', 'move-right');
+          $(".exit-off-canvas").trigger("click");
         };
 
         // var $offCanvasWrap = $(".off-canvas-wrap");
