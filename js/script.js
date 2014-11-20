@@ -5770,9 +5770,9 @@ var SiteScripts = (function($) {
     // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
         if (window.matchMedia(Foundation.media_queries.medium).matches) {
-          console.log('small');
-        } else {
           console.log('medium or above');
+        } else {
+          console.log('small');
         };
 
         // var $offCanvasWrap = $(".off-canvas-wrap");
