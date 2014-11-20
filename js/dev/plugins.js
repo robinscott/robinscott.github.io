@@ -28,12 +28,16 @@ var SiteScripts = (function($) {
 
     // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
-        var $offCanvasWrap = $(".off-canvas-wrap");
-        $(window).on('resize', Foundation.utils.throttle(function(e){
-            if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-right")) {
-                $(".exit-off-canvas").trigger("click");
-            } 
-        }, 300));
+        if (window.matchMedia(Foundation.media_queries.medium).matches) {
+          $(".off-canvas-wrap").addClass("move-right");
+        };
+
+        // var $offCanvasWrap = $(".off-canvas-wrap");
+        // $(window).on('resize', Foundation.utils.throttle(function(e){
+        //     if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-right")) {
+        //         $(".exit-off-canvas").trigger("click");
+        //     } 
+        // }, 300));
     };
 
     return app;
