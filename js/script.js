@@ -5769,12 +5769,12 @@ var SiteScripts = (function($) {
 
     // Close the Foundation off canvas navigation when the window resizes
     app.resizeClosesNavigation = function() {
-        if (window.matchMedia(Foundation.media_queries.medium).matches) {
-          console.log('medium or above');
-        } else {
-          console.log('small');
-          $(".exit-off-canvas").removeClass("offcanvas-overlap-right");
-        };
+        //if (window.matchMedia(Foundation.media_queries.medium).matches) {
+        //  console.log('medium or above');
+        //} else {
+        //  console.log('small');
+        //  $(".exit-off-canvas").removeClass("offcanvas-overlap-right");
+        //};
 
         // var $offCanvasWrap = $(".off-canvas-wrap");
         // $(window).on('resize', Foundation.utils.throttle(function(e){
