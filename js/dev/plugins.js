@@ -27,16 +27,16 @@ var SiteScripts = (function($) {
     };
 
     // Close the Foundation off canvas navigation when the window resizes
-    // app.resizeClosesNavigation = function() {
-    //     var $offCanvasWrap = $(".off-canvas-wrap");
-    //     $(window).on('resize', Foundation.utils.throttle(function(e){
-    //         if(this.outerWidth < 640 && $offCanvasWrap.hasClass("move-right")) {
-    //             $(".exit-off-canvas").trigger("click");
-    //         } else if(this.outerWidth > 640 && !$offCanvasWrap.hasClass("move-right")) {
-    //             $offCanvasWrap.addClass("move-right");
-    //         }
-    //     }, 300));
-    // };
+    app.resizeClosesNavigation = function() {
+        var $offCanvasWrap = $(".off-canvas-wrap");
+        $(window).on('resize', Foundation.utils.throttle(function(e){
+            if(this.outerWidth < 640 && $offCanvasWrap.hasClass("move-right")) {
+                $(".exit-off-canvas").trigger("click");
+            } else if(this.outerWidth > 640 && !$offCanvasWrap.hasClass("move-right")) {
+                $offCanvasWrap.addClass("move-right");
+            }
+        }, 300));
+    };
 
     return app;
 
@@ -46,5 +46,5 @@ var SiteScripts = (function($) {
 SiteScripts.handleConsoleReporting();
 
 $(function() {
-  	//SiteScripts.resizeClosesNavigation();
+  	SiteScripts.resizeClosesNavigation();
 });
