@@ -19,8 +19,6 @@ keywords: github pages, Jekyll, foundation 5
 			<p>You should probably update the <samp>_config.yml</samp> file, and edit <samp>scss/_setting.scss</samp> file. As well as <samp>scss/_custom.scss</samp>, where most the overrides are happening.</p>
 		</div>
 
-
-
 	</div>
 </div>
 
