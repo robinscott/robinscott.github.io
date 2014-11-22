@@ -5767,18 +5767,22 @@ var SiteScripts = (function($) {
         }
     };
 
-    // Close the Foundation off canvas navigation when the window resizes
-    app.resizeClosesNavigation = function() {
-        //if (window.matchMedia(Foundation.media_queries.small).matches) {
-          //$('.off-canvas-wrap').foundation('offcanvas', 'hide', 'move-right');
-        //};
+    // Setup Foundation off canvas navigation
+    app.setupOffcanvasNavigation = function() {
+        var $offCanvasWrap = $(".off-canvas-wrap");
 
-        // var $offCanvasWrap = $(".off-canvas-wrap");
-        // $(window).on('resize', Foundation.utils.throttle(function(e){
-        //     if(this.outerWidth > 640 && $offCanvasWrap.hasClass("move-right")) {
-        //         $(".exit-off-canvas").trigger("click");
-        //     } 
-        // }, 300));
+        if (window.matchMedia(Foundation.media_queries.medium).matches) {
+          $offCanvasWrap.addClass('off-canvas-custom');
+        }
+        
+        $(window).on('resize', Foundation.utils.throttle(function(){
+            if (window.matchMedia(Foundation.media_queries.medium).matches && (!$offCanvasWrap.hasClass("offcanvas-overlap") || !$offCanvasWrap.hasClass("off-canvas-custom"))) {
+                $offCanvasWrap.addClass('off-canvas-custom');
+            } else {
+                $offCanvasWrap.removeClass("off-canvas-custom");
+                $(".exit-off-canvas").trigger("click");
+            }
+        }, 300));
     };
 
     return app;
@@ -5789,7 +5793,7 @@ var SiteScripts = (function($) {
 SiteScripts.handleConsoleReporting();
 
 $(function() {
-  	SiteScripts.resizeClosesNavigation();
+  	SiteScripts.setupOffcanvasNavigation();
 });
 ;// Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
