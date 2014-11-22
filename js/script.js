@@ -5773,14 +5773,17 @@ var SiteScripts = (function($) {
 
         if (window.matchMedia(Foundation.media_queries.medium).matches) {
           $offCanvasWrap.addClass('off-canvas-custom');
+          alert('medium and above');
         }
         
         $(window).on('resize', Foundation.utils.throttle(function(){
             if (window.matchMedia(Foundation.media_queries.medium).matches && (!$offCanvasWrap.hasClass("offcanvas-overlap") || !$offCanvasWrap.hasClass("off-canvas-custom"))) {
                 $offCanvasWrap.addClass('off-canvas-custom');
+                alert('medium and above');
             } else {
                 $offCanvasWrap.removeClass("off-canvas-custom");
                 $(".exit-off-canvas").trigger("click");
+                alert('small');
             }
         }, 300));
     };
