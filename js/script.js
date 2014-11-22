@@ -5782,7 +5782,6 @@ var SiteScripts = (function($) {
                 alert('medium and above');
             } else {
                 $offCanvasWrap.removeClass("off-canvas-custom");
-                $(".exit-off-canvas").trigger("click");
                 alert('small');
             }
         }, 300));
