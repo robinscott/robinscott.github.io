@@ -8,7 +8,7 @@ keywords: github pages, Jekyll, foundation 5
 
 
 <div class="row">
-	<div class="medium-9 large-7 small-centered column">
+	<div class="column">
 		
 		<p class="mbm">I've combined my locally installed <a href="http://foundation.zurb.com/docs/sass.html">libsass/grunt version of foundation 5</a>, <a href="http://html5boilerplate.com/">html5 boilder plate</a>, and Jekyll to be used for github pages! See <a href="http://jekyllrb.com/docs/home/">Jekyll's documentation</a>, <a href="http://foundation.zurb.com/docs/">the foundation documentations</a>, and <a href="https://help.github.com/categories/20/articles">GitHub pages help pages</a>.</p>
 
@@ -25,7 +25,7 @@ keywords: github pages, Jekyll, foundation 5
 
 <div class="row"> 
 
-	<div class="large-4 columns">
+	<div class="columns">
 		<p><a href="page-html-unit-test.html">foundation-example.html</a> shows how all the html tags are rendered. Foundation takes care of those out of the box.</p>
 	</div>
 
@@ -40,7 +40,7 @@ keywords: github pages, Jekyll, foundation 5
 </div>
 
 <div class="row">
-	<div class="medium-9 large-7 small-centered column">
+	<div class="column">
 	
 		<p class="mvl">And out of the box, this supports <a href="http://fortawesome.github.io/Font-Awesome/">
 		<i class="fa fa-flag fa-lg">	

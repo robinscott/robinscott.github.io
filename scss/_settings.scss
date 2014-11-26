@@ -60,7 +60,7 @@ $font-smoothing: antialiased;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #6d9877;
+$primary-color: #6F5270;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
 
@@ -700,7 +700,7 @@ $paragraph-line-height: 1.8;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);
-// $off-canvas-bg: #333;
+ $off-canvas-bg: $primary-color;
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: 0.3rem rem-calc(15);
@@ -712,7 +712,7 @@ $paragraph-line-height: 1.8;
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba(#fff, 0.7);
+ $off-canvas-link-color: white;
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
 // Off Canvas Menu Icon Variables

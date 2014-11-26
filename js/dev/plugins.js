@@ -30,20 +30,17 @@ var SiteScripts = (function($) {
     app.setupOffcanvasNavigation = function() {
         var $offCanvasWrap = $(".off-canvas-wrap");
 
-        if (window.matchMedia(Foundation.media_queries.medium).matches) {
+        if (window.matchMedia(Foundation.media_queries.large).matches) {
           $offCanvasWrap.addClass('off-canvas-custom');
-          alert('medium and above');
         }
         
         $(window).on('resize', Foundation.utils.throttle(function(){
-            if (window.matchMedia(Foundation.media_queries.medium).matches && (!$offCanvasWrap.hasClass("offcanvas-overlap") || !$offCanvasWrap.hasClass("off-canvas-custom"))) {
+            if (window.matchMedia(Foundation.media_queries.large).matches && (!$offCanvasWrap.hasClass("offcanvas-overlap") || !$offCanvasWrap.hasClass("off-canvas-custom"))) {
                 $offCanvasWrap.addClass('off-canvas-custom');
-                alert('medium and above');
             } else {
                 $offCanvasWrap.removeClass("off-canvas-custom");
-                alert('small');
             }
-        }, 300));
+        }, 800));
     };
 
     return app;

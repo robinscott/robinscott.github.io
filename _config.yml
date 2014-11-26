@@ -49,4 +49,4 @@ permalink: pretty
 #paginate: 3
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.md, package.json, grunt.js, Gruntfile.js, node_modules, bower_components, .bowerr, bower.json, scss]
+exclude: [README.md, package.json, .nojekyll, grunt.js, Gruntfile.js, node_modules, bower_components, .bowerr, bower.json, scss]
