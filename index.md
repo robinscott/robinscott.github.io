@@ -4,8 +4,10 @@ description: This is my site. Welcome.
 keywords: github pages, Jekyll, foundation 5
 ---
 
-<h1 class="mvl">Whoa! Jekyll, Foundation 5, HTML5 boilerplate and github pages!</h1>
-
+<header class="header-main">
+	<h1>Robin Scott</h2>
+	<h2>UI / front end developer</h1>
+</header>
 
 <div class="row">
 	<div class="column">
@@ -29,11 +31,11 @@ keywords: github pages, Jekyll, foundation 5
 		<p><a href="page-html-unit-test.html">foundation-example.html</a> shows how all the html tags are rendered. Foundation takes care of those out of the box.</p>
 	</div>
 
-	<div class="large-4 columns">
+	<div class="medium-6 columns">
 		<p>Another example are shown in <a href="page-foundation-example.html">foundation-example.html</a>. </p>
 	</div>
 
-	<div class="large-4 columns">
+	<div class="medium-6 columns">
 		<p>And finally, foundation's grid system, <a href="page-template-example.html">page-template-example</a> You can also <a href="http://foundation.zurb.com/templates.html">get more templates</a> from foundations home.</p>
 	</div>
 
