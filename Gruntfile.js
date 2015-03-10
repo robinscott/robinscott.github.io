@@ -19,6 +19,7 @@ module.exports = function(grunt) {
         js_min: 'js/script.min.js'
       }
     },
+
     css: {
       src: {
         foundation: 'bower_components/foundation/scss',
@@ -69,7 +70,6 @@ module.exports = function(grunt) {
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
-
       sass: {
         files: 'scss/*.scss',
         tasks: ['sass']
@@ -77,8 +77,39 @@ module.exports = function(grunt) {
       scripts: {
         files: '<%= js.src.js_dev %>',
         tasks: ['concat','uglify']
+      },
+      jekyll: {
+        files: [
+          '_layouts/**/*.html',
+          '_includes/**/*.html',
+          'index.md'
+          ],
+        tasks: ['jekyll:dev']
+      }
+    },
+
+    jekyll: {
+      dev: {
+        options: {
+          src : '<%= app %>',
+          dest: '<%= dist %>',
+          config: '_config.yml'
+        }
+      }
+    },
+
+    browserSync: {
+      bsFiles: {
+          src : 'assets/css/*.css'
+      },
+      options: {
+          server: {
+              baseDir: "./"
+          }
       }
     }
+}
+
 
   });
 
@@ -86,7 +117,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['concat','uglify','build','watch']);
+  grunt.registerTask('default', ['concat','uglify','build','jekyll','watch']);
 }
