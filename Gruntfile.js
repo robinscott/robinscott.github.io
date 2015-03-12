@@ -95,20 +95,19 @@ module.exports = function(grunt) {
           dest: '<%= dist %>',
           config: '_config.yml'
         }
+      },
+      server: {
+        options: {
+          serve: true
+        }
       }
     },
 
-    browserSync: {
-      bsFiles: {
-          src : 'assets/css/*.css'
-      },
-      options: {
-          server: {
-              baseDir: "./"
-          }
+    concurrent: {
+      target: {
+          tasks: ['jekyll:server', 'watch']
       }
     }
-}
 
 
   });
@@ -118,8 +117,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['concat','uglify','build','jekyll','watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'build', 'concurrent:target']);
 }

@@ -10,7 +10,7 @@
 $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
+@import "foundation/functions";	
 
 // $experimental: true;
 
@@ -45,7 +45,7 @@ $total-columns: 12;
 // $font-weight-bold: bold !default
 
 // We use these to control various global styles
-$body-bg: #DEDFD7;
+//$body-bg: #DEDFD7;
 $body-font-color: black;
 $body-font-family: "Oxygen", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-weight: normal;
