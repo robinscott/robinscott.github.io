@@ -47,7 +47,7 @@ $total-columns: 12;
 // We use these to control various global styles
 //$body-bg: #DEDFD7;
 $body-font-color: black;
-$body-font-family: "Oxygen", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-weight: normal;
 $body-font-style: normal;
 
@@ -60,7 +60,7 @@ $font-smoothing: antialiased;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #2B4F67;
+$primary-color: #2a9fd1;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
 
@@ -699,8 +699,8 @@ $paragraph-line-height: 1.8;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
-// $off-canvas-width: rem-calc(250);
- $off-canvas-bg: $primary-color;
+$off-canvas-width: rem-calc(300);
+$off-canvas-bg: $primary-color;
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: 0.3rem rem-calc(15);
@@ -712,8 +712,8 @@ $paragraph-line-height: 1.8;
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
- $off-canvas-link-color: white;
-// $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
+$off-canvas-link-color: white;
+$off-canvas-link-border-bottom: none;
 
 // Off Canvas Menu Icon Variables
 // $tabbar-menu-icon-color: #fff;

@@ -12,6 +12,15 @@ h1, h2, h3, h4, h5, h6 {
 .off-canvas-custom {
 	.left-off-canvas-menu {
 		transform: none;
-		transition: transform 0;
+		transition: transform 0ms;
+	}
+}
+
+.left-off-canvas-menu {
+	position: fixed;
+	ul.off-canvas-list {
+		li {
+			display: inline-block;
+		}
 	}
 }

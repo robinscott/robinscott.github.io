@@ -107,6 +107,13 @@ module.exports = function(grunt) {
       target: {
           tasks: ['jekyll:server', 'watch']
       }
+    },
+
+    open : {
+      dev : {
+        path: 'http://localhost:4000',
+        app: 'Google Chrome'
+      }
     }
 
 
@@ -118,7 +125,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['concat', 'uglify', 'build', 'concurrent:target']);
+  grunt.registerTask('default', 'Build and run site locally from _site directory.', ['concat', 'uglify', 'build', 'open:dev', 'concurrent:target']);
 }
