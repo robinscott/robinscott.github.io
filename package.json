@@ -12,8 +12,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-jekyll": "^0.4.2",
     "grunt-open": "^0.2.3",
-    "grunt-sass": "~0.8.0",
-    "node-sass": "~0.7.0"
+    "load-grunt-tasks": "^3.3.0"
   },
   "description": "jekyll-foundation-5-starter\r ===========================",
   "main": "Gruntfile.js",
