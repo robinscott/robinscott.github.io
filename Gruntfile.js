@@ -109,8 +109,13 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
-            target: {
-                tasks: ['jekyll:server', 'watch']
+            serve: [
+                'sass',
+                'watch',
+                'shell:jekyllServe'
+            ],
+            options: {
+                logConcurrentOutput: true
             }
         },
 
@@ -133,6 +138,17 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('build', ['sass']);
-    grunt.registerTask('default', 'Build and run site locally from _site directory.', ['concat', 'uglify', 'build', 'open:dev', 'concurrent:target']);
+    // Register the grunt serve task
+    grunt.registerTask('serve', [
+        'concurrent:serve'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'shell:jekyllBuild',
+        'sass'
+    ]);
+
+    // Register build as the default task fallback
+    grunt.registerTask('default', 'serve');
+
 };
