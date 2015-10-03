@@ -5,8 +5,8 @@ keywords: github pages, Jekyll, foundation 5
 ---
 
 <header class="header-main">
-	<h1>Robin Scott</h2>
-	<h2>UI / front end developer</h1>
+	<!--<h1>Robin Scott</h2>
+	<h2>UI / front end developer</h1>-->
 </header>
 
 <div class="row">
@@ -20,6 +20,14 @@ keywords: github pages, Jekyll, foundation 5
 		<div class="panel radius mvl">
 			<p>You should probably update the <samp>_config.yml</samp> file, and edit <samp>scss/_setting.scss</samp> file. As well as <samp>scss/_custom.scss</samp>, where most the overrides are happening.</p>
 		</div>
+		
+		<ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
 
 	</div>
 </div>
