@@ -24,7 +24,6 @@ module.exports = function (grunt) {
                 js_min: 'js/script.min.js'
             }
         },
-
         css: {
             src: {
                 foundation: 'bower_components/foundation/scss',
@@ -36,6 +35,15 @@ module.exports = function (grunt) {
         },
 
         // Task configuration
+        browserSync: {
+            bsFiles: {
+                src : '_site/index.html'
+            },
+            options: {
+                //watchTask: true,
+                server: '_site'
+            }
+        },
         sass: {
             options: {
                 loadPath: ['<%= css.src.foundation %>'],
@@ -51,7 +59,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         concat: {
             options: {
                 separator: ';'
@@ -61,7 +68,6 @@ module.exports = function (grunt) {
                 dest: '<%= js.dest.js_concat %>'
             }
         },
-
         uglify: {
             options: {
                 mangle: false
@@ -72,7 +78,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         watch: {
             grunt: {files: ['Gruntfile.js']},
             sass: {
@@ -92,7 +97,6 @@ module.exports = function (grunt) {
                 tasks: ['jekyll:dev']
             }
         },
-
         jekyll: {
             dev: {
                 options: {
@@ -107,25 +111,16 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         concurrent: {
             serve: [
-                'sass',
-                'watch',
-                'shell:jekyllServe'
+                'shell:jekyllServe',
+                'browserSync',
+                'watch'
             ],
             options: {
                 logConcurrentOutput: true
             }
         },
-
-        open: {
-            dev: {
-                path: 'http://localhost:4000',
-                app: 'Google Chrome'
-            }
-        },
-
         shell: {
             jekyllBuild: {
                 command: 'jekyll build'
@@ -140,12 +135,8 @@ module.exports = function (grunt) {
 
     // Register the grunt serve task
     grunt.registerTask('serve', [
+        'sass',
         'concurrent:serve'
-    ]);
-
-    grunt.registerTask('deploy', [
-        'shell:jekyllBuild',
-        'sass'
     ]);
 
     // Register build as the default task fallback
