@@ -37,11 +37,47 @@ module.exports = function (grunt) {
         // Task configuration
         browserSync: {
             bsFiles: {
-                src : '_site/index.html'
+                src : [
+                    '_site/css/*.css',
+                    '_site/*.html',
+                    '_site/js/*.js'
+                ]
             },
             options: {
-                //watchTask: true,
                 server: '_site'
+            }
+        },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dist: {
+                src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
+                dest: '<%= js.dest.js_concat %>'
+            }
+        },
+        concurrent: {
+            serve: [
+                'shell:jekyllServe',
+                'browserSync',
+                'watch'
+            ],
+            options: {
+                logConcurrentOutput: true
+            }
+        },
+        jekyll: {
+            dev: {
+                options: {
+                    src: '<%= app %>',
+                    dest: '<%= dist %>',
+                    config: '_config.yml'
+                }
+            },
+            server: {
+                options: {
+                    serve: true
+                }
             }
         },
         sass: {
@@ -59,13 +95,12 @@ module.exports = function (grunt) {
                 }
             }
         },
-        concat: {
-            options: {
-                separator: ';'
+        shell: {
+            jekyllBuild: {
+                command: 'jekyll build'
             },
-            dist: {
-                src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
-                dest: '<%= js.dest.js_concat %>'
+            jekyllServe: {
+                command: 'jekyll serve'
             }
         },
         uglify: {
@@ -95,38 +130,6 @@ module.exports = function (grunt) {
                     'index.md'
                 ],
                 tasks: ['jekyll:dev']
-            }
-        },
-        jekyll: {
-            dev: {
-                options: {
-                    src: '<%= app %>',
-                    dest: '<%= dist %>',
-                    config: '_config.yml'
-                }
-            },
-            server: {
-                options: {
-                    serve: true
-                }
-            }
-        },
-        concurrent: {
-            serve: [
-                'shell:jekyllServe',
-                'browserSync',
-                'watch'
-            ],
-            options: {
-                logConcurrentOutput: true
-            }
-        },
-        shell: {
-            jekyllBuild: {
-                command: 'jekyll build'
-            },
-            jekyllServe: {
-                command: 'jekyll serve'
             }
         }
 
