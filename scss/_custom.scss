@@ -1,26 +1,26 @@
-
 // Typography
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 200;
-	@media #{$medium-up} {
-	}
-	@media #{$large-up} {
-	}
+  font-weight: 200;
+  @media #{$medium-up} {
+  }
+  @media #{$large-up} {
+  }
 }
 
-// Set off-canvas menu open when on desktop
+// Off-canvas
 .off-canvas-custom {
-	.left-off-canvas-menu {
-		transform: none;
-		transition: transform 0ms;
-	}
+  .left-off-canvas-menu {
+    transform: none;
+    transition: transform 0ms; // Sets speed of opening menu
+  }
 }
 
 .left-off-canvas-menu {
-	position: fixed;
-	ul.off-canvas-list {
-		li {
-			display: inline-block;
-		}
-	}
+  transition: transform 200ms ease 0s; // Sets speed of closing menu
+  position: fixed;
+  ul.off-canvas-list {
+    li {
+      display: inline-block;
+    }
+  }
 }

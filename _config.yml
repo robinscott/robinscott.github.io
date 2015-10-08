@@ -43,7 +43,7 @@ imageurl:
 markdown: kramdown
 
 # Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
-permalink: pretty
+permalink: none
 
 # How many articles do you wish to appear on the front page:
 #paginate: 3
