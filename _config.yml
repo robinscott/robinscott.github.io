@@ -46,7 +46,7 @@ markdown: kramdown
 permalink: none
 
 # How many articles do you wish to appear on the front page:
-#paginate: 3
+paginate: 3
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.md, package.json, .nojekyll, grunt.js, Gruntfile.js, node_modules, bower_components, .bowerr, bower.json, scss]
