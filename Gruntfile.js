@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             serve: [
-                'shell:jekyllBuild',
+                'shell:jekyllServe',
                 'browserSync',
                 'watch'
             ],
@@ -125,7 +125,7 @@ module.exports = function (grunt) {
                 files: [
                     '_layouts/**/*.html',
                     '_includes/**/*.html',
-                    'index.html'
+                    'index.md'
                 ],
                 tasks: ['jekyll:dev']
             }

@@ -1,12 +1,36 @@
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <!--[if lte IE 8]><script src="{{ "/js/ie/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
-  <!--[if lte IE 8]><link rel="stylesheet" href="{{ "/css/ie8.css" | prepend: site.baseurl }}" /><![endif]-->
-  <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<meta name="description" content="{{ page.title }} - {{ site.name }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="{{ page.keywords }}, {{ site.keywords }}" />
+
+<!-- CSS  Get: http://www.google.com/fonts/
+http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Font Awesome -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Open Graph: https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
+Twitter: https://dev.twitter.com/docs/cards/types/summary-card
+============================== -->
+<meta property="og:title" content="{{ page.title }}"/>
+<meta property="og:site_name" content=" - {{ site.name }}"/>
+<meta property="og:url" content=" - {{ site.url }}"/>
+<meta property="og:description" content="{{ page.description }}"/>
+<meta property="og:image" content="{{ page.imageurl }}"/>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{ site.twitter }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="{{ page.imageurl }}">
+
+<!-- modernizr
+================================================== -->
+<!--<script src="bower_components/modernizr/modernizr.js"></script>-->

@@ -1,70 +1,52 @@
-# Welcome to Jekyll!
-#
+# Name of your blog (this will show up at the top of your page)
+name: Robin Scott
+brand: My Site
 
-# Site settings
-title: Spectral
-description: |
-  Another fine responsive  
-  site template freebie  
-  crafted by [HTML5 UP](http://html5up.net)
-owner: Your Name # or company name
-first_published: 2016 # if migrating another site, the year of your first publish
-email: your-email@domain.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-social:
-  twitter: https://twitter.com/<username>
-  github: https://github.com/<username>
-  linkedin-square: https://linkedin.com/in/<username>
-  facebook-official: https://facebook.com/<username>
-  google-plus-square: https://plus.google.com/u/0/+<username>
-  #email: /contact/
-  #flickr:
-  #instagram:
-  #youtube-square:
-  #spotify:
-  #stack-overflow:
-  #vimeo:
-  #reddit:
-  #stubleupon:
-  #delicious:
-  #pied-piper:
-  #digg:
-  #soundcloud:
-  #deviantart:
-  #angellist:
-  #tumblr-square:
-  #stackexchange:
-  #weibo:
-  #trello:
-  #foursquare:
-  #linux:
-  #bitbucket-square:
-  #vk:
-  #slack:
-  #vine:
-  #weixin:
-  #yelp:
-  #skyatlas:
-  #leanpub:
-  #connectdevelop:
-  #ils:
-  #forumbee:
-  #tripadvisor:
-  #amazon:
+# SEO and MI
+keyword:
+analytics: 
 
-# Build settings
-markdown: kramdown
-#sass:
-#  style: compressed
-exclude: 
-  - '*readme*'
-  - '*README*'
-  - '*bower*'
-  - '*Gemfile*'
-  - package.json
-  - .nojekyll
-  - grunt.js
-  - Gruntfile.js
-  - node_modules
-  - scss
+# Short description (goes below the title)
+description: Personal site
+
+# Your name, as you want it to appear underneath each post and in the footer
+author: Your Name
+year:
+
+# Your email if you want it to be linked on the contact page
+email: you@example.com
+
+# Social
+twitter: 
+github: 
+
+# The directory for category index pages. Change it to something else if
+# for example you want links like /categories/category1 instead of /category1
+category_dir: /
+
+# Uncomment if you are planning to run the blog in a subdirectory
+# Note - if you enable this, and attempt to view your site locally you have to use the baseurl in your local path.
+# Example, you must use http://localhost:4000/path/to/blog
+#baseurl: /path/to/blog
+baseurl:
+
+# The URL of your actual domain.
+url: http://robinscott.github.io
+
+# URL for images (TBC)
+imageurl:
+
+#### Under the Hood Stuff #####
+# Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
+# If you use maroku (default engine) some of your generated pages may not validate or lint as html5
+# If you don't have it install it via gem install rdiscount
+markdown: rdiscount
+
+# Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
+permalink: none
+
+# How many articles do you wish to appear on the front page:
+paginate: 3
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.md, package.json, .nojekyll, grunt.js, Gruntfile.js, node_modules, bower_components, .bowerr, bower.json, scss]
