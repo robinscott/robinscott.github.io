@@ -60,6 +60,9 @@ module.exports = function (grunt) {
                 'browserSync',
                 'watch'
             ],
+            build: [
+                'shell:jekyllBuild'
+            ],
             options: {
                 logConcurrentOutput: true
             }
@@ -96,9 +99,6 @@ module.exports = function (grunt) {
         shell: {
             jekyllBuild: {
                 command: 'jekyll build'
-            },
-            jekyllServe: {
-                command: 'jekyll serve'
             }
         },
         uglify: {
@@ -134,13 +134,16 @@ module.exports = function (grunt) {
 
     });
 
-    // Register the grunt serve task
+    grunt.registerTask('build', [
+        'sass',
+        'shell:jekyllBuild'
+    ]);
+
     grunt.registerTask('serve', [
         'sass',
         'concurrent:serve'
     ]);
 
-    // Register build as the default task fallback
     grunt.registerTask('default', 'serve');
 
 };
