@@ -1,91 +1,19 @@
-<!doctype html>
-<html class="no-js">
-  <head>
-    {% include head.html %}
-  </head>
-  <body>
+<!DOCTYPE html>
+<html>
 
-    <div class="off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap"> 
-        
-        <!--[if lt IE 8]>
-            <div data-alert class="alert-box alert radius" class="browsehappy">Please <a href="http://browsehappy.com/">upgrade your browser</a>. <a href="#" class="close">&times;</a></div>
-        <![endif]-->
-        
-        <!-- Header and nav  -->
-        <header id="header" class="row">
-            <div class="medium-11 medium-centered large-9 large-push-3 large-uncentered columns">
-                <section class="right hide-for-large-up">
-                  <ul class="inline-list mam">
-                    <li>
-                      <a href="#" class="left-off-canvas-toggle">
-                        <i class="fa fa-bars fa-lg"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-            </div>
-        </header>
+{% include head.html %}
 
-        <!-- Off Canvas Menu -->
-        <aside class="left-off-canvas-menu">
-          <h1>
-            <a href="{{ site.url }}">{{ site.brand }}</a>
-          </h1>
-          <!-- navigation list goes here -->
-          <ul class="off-canvas-list">
-            {% include nav.html %}
-          </ul>
-        </aside>
-        
-        <!-- Content -->
-        <div class="row">
-          <section role="main">
-            <div class="content medium-11 medium-centered large-9 large-push-3 large-uncentered columns">
-              
-              {{ content }}
-              
-            </div>
-          </section>
-        </div>
-            
-        <!-- Footer -->
-        <footer class="site-footer row" role="contentinfo">
-          <hr/>
-          <div class="medium-11 medium-centered large-9 large-push-3 large-uncentered columns">
-            <ul class="inline-list">
-              {% include nav.html %}
-            </ul>
-            <p class="quiet copyright right"> <a href="https://twitter.com/{{ site.twitter }}">
-              <i class="fa fa-twitter">
-              </i>
-              @{{ site.twitter }}</a>, <a href="https://github.com/{{ site.github }}/">
-              <i class="fa fa-github">
-              </i>
-              @{{ site.github }}</a> {{ site.year }}.</p>
-          </div>
-        </footer>
+<body>
 
-        <!-- close the off-canvas menu -->
-        <a class="exit-off-canvas"></a>
+<!-- Page Wrapper -->
+<main id="page-wrapper">
 
-    	</div>
-    </div>
+  {% include header.html %}
 
-    <!-- Scripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.js"><\/script>')</script>
-    <script src="{{ site.baseurl }}/js/script.js"></script>
+  {{ content }}
 
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
+</main>
 
-  </body>
+</body>
+
 </html>

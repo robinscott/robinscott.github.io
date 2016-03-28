@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             serve: [
-                'shell:jekyllServe',
+                'shell:jekyllBuild',
                 'browserSync',
                 'watch'
             ],
@@ -114,8 +114,8 @@ module.exports = function (grunt) {
         watch: {
             grunt: {files: ['Gruntfile.js']},
             sass: {
-                files: 'scss/*.scss',
-                tasks: ['sass']
+                files: ['_sass/*.scss','css/styles.scss'],
+                tasks: ['shell:jekyllBuild']
             },
             scripts: {
                 files: '<%= js.src.js_dev %>',
@@ -135,12 +135,10 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
-        'sass',
         'shell:jekyllBuild'
     ]);
 
     grunt.registerTask('serve', [
-        'sass',
         'concurrent:serve'
     ]);
 

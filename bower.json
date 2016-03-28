@@ -2,5 +2,8 @@
   "name": "foundation-libsass-template",
   "dependencies": {
     "foundation": "zurb/bower-foundation"
+  },
+  "devDependencies": {
+    "normalize-scss": "~3.0.3"
   }
 }

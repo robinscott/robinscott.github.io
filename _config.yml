@@ -46,7 +46,21 @@ markdown: rdiscount
 permalink: none
 
 # How many articles do you wish to appear on the front page:
-paginate: 3
+# paginate: 3
+
+sass:
+  # style: compressed
+  load_paths:
+    - _sass
+    - bower_components/normalize-scss/
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.md, package.json, .nojekyll, grunt.js, Gruntfile.js, node_modules, bower_components, .bowerr, bower.json, scss]
+exclude:
+  - README.md
+  - package.json
+  - .nojekyll
+  - grunt.js
+  - Gruntfile.js
+  - node_modules
+  - bower_components
+  - bower.json
