@@ -2,9 +2,23 @@
 # Generate SCSS from Jekyll with Front Matter.
 ---
 
-/* normalize it */
+// libraries
 @import "normalize";
 
-/* custom */
-@import "menu";
-@import "header";
+// Partials
+@import
+  'functions',
+  'header',
+  'menu',
+  'mixins',
+  'settings';
+
+
+// Basics
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

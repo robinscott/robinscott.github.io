@@ -13,27 +13,6 @@ module.exports = function (grunt) {
         '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.business %>; */\n',
 
-        // Paths
-        js: {
-            src: {
-                foundation: 'bower_components/foundation/js/foundation.js',
-                js_dev: 'js/dev/*.js'
-            },
-            dest: {
-                js_concat: 'js/script.js',
-                js_min: 'js/script.min.js'
-            }
-        },
-        css: {
-            src: {
-                foundation: 'bower_components/foundation/scss',
-                sass: 'scss/style.scss'
-            },
-            dest: {
-                css: 'css/style.css'
-            }
-        },
-
         // Task configuration
         browserSync: {
             bsFiles: {
@@ -50,8 +29,8 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['<%= js.src.foundation %>', '<%= js.src.js_dev %>'],
-                dest: '<%= js.dest.js_concat %>'
+                src: '_site/js/main.js',
+                dest: '_site/js/**/*'
             }
         },
         concurrent: {
@@ -67,35 +46,6 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             }
         },
-        jekyll: {
-            dev: {
-                options: {
-                    src: '<%= app %>',
-                    dest: '<%= dist %>',
-                    config: '_config.yml'
-                }
-            },
-            server: {
-                options: {
-                    serve: true
-                }
-            }
-        },
-        sass: {
-            options: {
-                loadPath: ['<%= css.src.foundation %>'],
-                banner: '<%= banner %>',
-                quiet: true
-            },
-            dist: {
-                options: {
-                    style: 'compressed' //nested, compact, compressed, expanded
-                },
-                files: {
-                    '<%= css.dest.css %>': '<%= css.src.sass %>'
-                }
-            }
-        },
         shell: {
             jekyllBuild: {
                 command: 'jekyll build'
@@ -107,7 +57,7 @@ module.exports = function (grunt) {
             },
             output: {
                 files: {
-                    '<%= js.dest.js_min %>': ['<%= js.dest.js_concat %>']
+                    '_site/js/**/*': '_site/js/**/*'
                 }
             }
         },
@@ -118,16 +68,18 @@ module.exports = function (grunt) {
                 tasks: ['shell:jekyllBuild']
             },
             scripts: {
-                files: '<%= js.src.js_dev %>',
-                tasks: ['concat', 'uglify']
+                files: 'js/**/*',
+                tasks: 'shell:jekyllBuild'
             },
             jekyll: {
                 files: [
-                    '_layouts/**/*.html',
-                    '_includes/**/*.html',
-                    'index.md'
+                    '_drafts/**/*',
+                    '_includes/**/*',
+                    '_layouts/**/*',
+                    '_posts/**/*',
+                    '*.html'
                 ],
-                tasks: ['jekyll:dev']
+                tasks: ['shell:jekyllBuild']
             }
         }
 
