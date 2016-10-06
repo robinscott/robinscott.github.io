@@ -37,6 +37,7 @@ module.exports = function (grunt) {
             serve: [
                 'shell:jekyllBuild',
                 'browserSync',
+                'postcss',
                 'watch'
             ],
             build: [
@@ -44,6 +45,18 @@ module.exports = function (grunt) {
             ],
             options: {
                 logConcurrentOutput: true
+            }
+        },
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')({
+                        browsers: 'last 4 versions'
+                    })
+                ]
+            },
+            dist: {
+                src: '_site/css/*.css'
             }
         },
         shell: {
@@ -65,7 +78,7 @@ module.exports = function (grunt) {
             grunt: {files: ['Gruntfile.js']},
             sass: {
                 files: ['_sass/*.scss','css/styles.scss'],
-                tasks: ['shell:jekyllBuild']
+                tasks: ['shell:jekyllBuild', 'postcss']
             },
             scripts: {
                 files: 'js/**/*',

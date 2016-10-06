@@ -3,22 +3,16 @@
 ---
 
 // libraries
-@import "normalize";
+@import 'normalize';
+
+// Settings
+@import 'settings';
 
 // Partials
 @import
+  'banner',
   'functions',
   'header',
+  'main',
   'menu',
-  'mixins',
-  'settings';
-
-
-// Basics
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+  'mixins';
