@@ -7,11 +7,25 @@ keywords: github pages, Jekyll, foundation 5
 <!-- Banner -->
 <section class="Banner">
     <div class="inner">
-        <h2>{{ site.title }}</h2>
-        <p>{{ site.description | markdownify }}</p>
-        <ul class="actions">
-            <li><a href="#" class="button special">Activate</a></li>
-        </ul>
+        <h2 class="Banner-name">{{ site.name }}</h2>
+        <h2 class="Banner-description">{{ site.description | markdownify }}</h2>
     </div>
-    <a href="#one" class="more scrolly">Learn More</a>
+    <a href="#intro" class="scrolly">See work examples</a>
+</section>
+
+<!-- One -->
+<section id="intro" class="Intro">
+    <div class="Intro-inner">
+        <p class="Intro-text">Hi, I’m Robin - a front-end developer and UI designer.<br /> This website covers some of my recent work and summarises my approach to front-end development.</p>
+    </div>
+</section>
+
+<!-- One -->
+<section class="Mobilefirst">
+    <div class="Mobilefirst-inner">
+        <header class="Header">
+            <h2 class="Header-text">Mobile first and responsive web design</h2>
+        </header>
+        <p class="Mobilefirst-text">Approaching a new project by designing and building for smaller devices first brings a number of benefits to the development process. Minimal screen real estate and slower download speeds forces the developer to focus on what’s essential for the user. This was the approach I adopted when designing and developing the Comparethemarket.com motor insurance website front-end. Starting with sketched prototypes for demonstration to stakeholders, then to moving to higher definition Photoshop visuals to include branding.</p>
+    </div>
 </section>

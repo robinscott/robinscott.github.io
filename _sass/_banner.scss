@@ -5,6 +5,7 @@
     position: center center;
     repeat: no-repeat;
     size: cover;
+    attachment: fixed;
   }
   display: flex;
   flex-direction: column;
@@ -32,6 +33,26 @@
     animation-duration: 2s;
     animation-fill-mode: forwards;
   }
+
+  &-name {
+    color: white;
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 1.3em;
+      weight: 100;
+    }
+    text-transform: uppercase;
+  }
+
+  &-description {
+    color: white;
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 3.1em;
+      weight: 100;
+    }
+  }
+
 }
 
 @-webkit-keyframes sharpenAnimation {

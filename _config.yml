@@ -7,7 +7,7 @@ keyword:
 analytics: 
 
 # Short description (goes below the title)
-description: Personal site
+description: Creative front-end development
 
 # Your name, as you want it to appear underneath each post and in the footer
 author: Your Name
@@ -62,5 +62,4 @@ exclude:
   - grunt.js
   - Gruntfile.js
   - node_modules
-  - bower_components
   - bower.json
