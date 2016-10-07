@@ -52,7 +52,7 @@ sass:
   # style: compressed
   load_paths:
     - _sass
-    - bower_components/normalize-scss/
+    # - bower_components/normalize-scss/
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude:
@@ -62,4 +62,5 @@ exclude:
   - grunt.js
   - Gruntfile.js
   - node_modules
+  - bower_components
   - bower.json
