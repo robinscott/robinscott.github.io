@@ -79,18 +79,14 @@
 }
 
 .Mobilefirst {
-  background: {
-    image: url('../images/mobile-motor-price.png');
-    repeat: no-repeat;
-    size: 60%;
-    position: 10% 20%;
-  }
   padding: 0 8%;
+  border-bottom: 1px solid lightslategrey;
+  overflow: auto;
 
   &-inner {
-    max-width: 60em;
+    max-width: 65em;
     margin: 0 auto;
-    padding: 1em 0 10em 0;
+    padding: 1em 0;
   }
 
   &-text {
@@ -98,19 +94,140 @@
     text-align: justify;
     font: {
       family: 'Titillium Web', sans-serif;
-      size: 1.15em;
+      size: 1em;
       weight: 100;
     }
   }
 
+  &-image {
+    max-width: 100%;
+  }
+
   @media all and (min-width: 50em) {
 
-    background: {
-      size: 20%;
+    &-container {
+      float: left;
+      width: 58%;
+      overflow: auto;
+    }
+
+    &-image {
+      float: right;
+      width: 40%;
+      max-width: 100%;
     }
 
     &-inner {
-      padding: 8em 0;
+      padding: 6em 0;
+    }
+
+    &-text {
+      text-align: left;
+      font-size: 1.3em;
+    }
+
+  }
+
+}
+
+.Ideation {
+  padding: 0 8%;
+  border-bottom: 1px solid lightslategrey;
+  overflow: auto;
+  background-color: #c5c5c5;
+
+  &-inner {
+    max-width: 65em;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+
+  &-text {
+    color: black;
+    text-align: justify;
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 1em;
+      weight: 100;
+    }
+  }
+
+  &-image {
+    max-width: 100%;
+  }
+
+  @media all and (min-width: 50em) {
+
+    &-container {
+      float: left;
+      width: 50%;
+      overflow: auto;
+    }
+
+    &-image {
+      float: right;
+      width: 45%;
+      max-width: 100%;
+      padding-top: 7.5em;
+    }
+
+    &-inner {
+      padding: 6em 0;
+      overflow: auto;
+    }
+
+    &-text {
+      text-align: left;
+      font-size: 1.3em;
+    }
+
+  }
+
+}
+
+.Development {
+  padding: 0 8%;
+  border-bottom: 1px solid lightslategrey;
+
+  &-inner {
+    max-width: 65em;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+
+  &-text {
+    color: black;
+    text-align: justify;
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 1em;
+      weight: 100;
+    }
+  }
+
+  &-image {
+    max-width: 100%;
+  }
+
+  @media all and (min-width: 50em) {
+
+    &-container {
+      float: right;
+      width: 55%;
+      padding-left: 2em;
+      overflow: auto;
+    }
+
+    &-image {
+      float: left;
+      width: 40%;
+      max-width: 100%;
+      margin-top: 2em;
+    }
+
+    &-inner {
+      padding: 6em 0;
+      overflow: auto;
     }
 
     &-text {

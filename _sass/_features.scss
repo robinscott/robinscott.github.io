@@ -1,0 +1,17 @@
+.Features {
+  padding: 0;
+  overflow: auto;
+
+  &-item {
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 1.3em;
+      weight: 400;
+      style: italic;
+    }
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    margin-right: .8em;
+  }
+}
