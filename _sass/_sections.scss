@@ -223,6 +223,66 @@
       width: 40%;
       max-width: 100%;
       margin-top: 2em;
+
+      &.-border {
+        border: 1px solid grey;
+      }
+    }
+
+    &-inner {
+      padding: 6em 0;
+      overflow: auto;
+    }
+
+    &-text {
+      text-align: left;
+      font-size: 1.3em;
+    }
+
+  }
+
+}
+
+.Leanux {
+  padding: 0 8%;
+  border-bottom: 1px solid lightslategrey;
+  overflow: auto;
+  background-color: #c5c5c5;
+
+  &-inner {
+    max-width: 65em;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+
+  &-text {
+    color: black;
+    text-align: justify;
+    font: {
+      family: 'Titillium Web', sans-serif;
+      size: 1em;
+      weight: 100;
+    }
+  }
+
+  &-image {
+    max-width: 100%;
+  }
+
+  @media all and (min-width: 50em) {
+
+    &-container {
+      float: left;
+      width: 50%;
+      overflow: auto;
+      padding-bottom: 5em;
+    }
+
+    &-image {
+      float: right;
+      width: 45%;
+      max-width: 100%;
+      padding-top: 7.5em;
     }
 
     &-inner {
